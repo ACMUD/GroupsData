@@ -31,7 +31,7 @@ export class FormComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   importar() {
-    const datos = JSON.parse(this.predata)
+    const datos = JSON.parse(this.predata);
     this.infobase = {
       // tslint:disable-next-line: no-string-literal
       Nombre: datos['Nombre'],
