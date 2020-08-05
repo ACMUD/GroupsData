@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "GroupsData"
+    }
+  },
+  "defaultProject": "GroupsData",
+  "cli": {
+    "analytics": "2535f124-ea21-4796-9220-b1f525089564"
+  }
 }
