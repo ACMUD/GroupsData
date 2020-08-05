@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 
@@ -19,6 +21,8 @@ import { FormComponent } from './components/form/form.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule ,
     MDBBootstrapModule.forRoot(),
     AppRoutingModule
   ],

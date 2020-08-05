@@ -1,1 +1,208 @@
-<p>form works!</p>
+<mdb-card>
+    <mdb-card-body>
+        <mdb-card-title>
+            <h4>Info Base Grupo de interes</h4>
+        </mdb-card-title>
+        <!-- <mdb-card-text>Some quick example text to build on the card title and make up the bulk of the card's
+        content.</mdb-card-text>
+       -->
+        <form>
+            <div class="form-row">
+                <div class="col">
+                    <div class="md-form ">
+                        <input mdbInput type="text" class="form-control" id="form1" placeholder=""
+                            [(ngModel)]="infobase['Nombre']" [ngModelOptions]="{standalone: true}">
+                        <label for="form1" class="">Nombre</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="md-form ">
+                        <input mdbInput type="text" class="form-control" id="form1" placeholder=""
+                            [(ngModel)]="infobase['Abreviacion']" [ngModelOptions]="{standalone: true}">
+                        <label for="form1" class="">Abreviación</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <div class="md-form ">
+                        <input mdbInput type="text" class="form-control" id="form1" placeholder=""
+                            [(ngModel)]="infobase['logo']" [ngModelOptions]="{standalone: true}">
+                        <label for="form1" class="">Logo path</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="md-form ">
+                        <input mdbInput type="text" class="form-control" id="form1" placeholder=""
+                            [(ngModel)]="infobase['link']" [ngModelOptions]="{standalone: true}">
+                        <label for="form1" class="">Link inscripción</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="md-form col">
+                    <textarea type="text" id="form7" class="md-textarea form-control" mdbInput
+                        [(ngModel)]="infobase['Descripcion']" [ngModelOptions]="{standalone: true}"></textarea>
+                    <label for="form7">Descripcion</label>
+                </div>
+            </div>
+        </form>
+    </mdb-card-body>
+</mdb-card>
+
+<mdb-card class="mt-2">
+    <mdb-card-body>
+        <mdb-card-title>
+            <h4>Responsables</h4>
+            <button class="float-right" type="button" mdbBtn color="success" mdbWavesEffect (click)="ActionResponsable('add')">
+                <mdb-icon fas icon="plus"></mdb-icon>
+            </button>
+            <br>
+            <br>
+        </mdb-card-title>
+        <form>
+            <div class="form-row" *ngFor="let responsable of responsables; let i = index">
+                <div class="col">
+                    <div class="md-form ">
+                        <input mdbInput type="text" class="form-control" id="form1" placeholder=""
+                            [(ngModel)]="responsables[i]['texto']" [ngModelOptions]="{standalone: true}">
+                        <label for="form1" class="">Nombre</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <button type="button" mdbBtn color="danger" mdbWavesEffect (click)="ActionResponsable('delete', i)">
+                        <mdb-icon fas icon="trash-alt"></mdb-icon>
+                    </button>
+
+                </div>
+            </div>
+        </form>
+    </mdb-card-body>
+</mdb-card>
+
+<mdb-card class="mt-2">
+    <mdb-card-body>
+        <mdb-card-title>
+            <h4>Prerequisitos</h4>
+            <button class="float-right" type="button" mdbBtn color="success" mdbWavesEffect (click)="ActionPrerequisitos('add')">
+                <mdb-icon fas icon="plus"></mdb-icon>
+            </button>
+            <br>
+            <br>
+        </mdb-card-title>
+        <form>
+            <div class="form-row" *ngFor="let prerequisito of prerequisitos; let i = index">
+                <div class="col">
+                    <div class="md-form ">
+                        <input mdbInput type="text" class="form-control" id="form1" placeholder=""
+                            [(ngModel)]="prerequisitos[i]['texto']" [ngModelOptions]="{standalone: true}">
+                        <label for="form1" class="">Descripcion</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <button type="button" mdbBtn color="danger" mdbWavesEffect (click)="ActionPrerequisitos('delete', i)">
+                        <mdb-icon fas icon="trash-alt"></mdb-icon>
+                    </button>
+
+                </div>
+            </div>
+        </form>
+    </mdb-card-body>
+</mdb-card>
+
+<mdb-card class="mt-2">
+    <mdb-card-body>
+        <mdb-card-title>
+            <h4>Temas</h4>
+            <button class="float-right" type="button" mdbBtn color="success" mdbWavesEffect (click)="ActionTemas('add')">
+                <mdb-icon fas icon="plus"></mdb-icon>
+            </button>
+            <br>
+            <br>
+        </mdb-card-title>
+        <form>
+            <div class="form-row" *ngFor="let Tema of TemasTrabajados; let i = index">
+                <div class="col">
+                    <div class="md-form ">
+                        <input mdbInput type="text" class="form-control" id="form1" placeholder=""
+                            [(ngModel)]="TemasTrabajados[i]['Nombre']" [ngModelOptions]="{standalone: true}">
+                        <label for="form1" class="">Nombre</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="md-form ">
+                        <input mdbInput type="text" class="form-control" id="form1" placeholder=""
+                            [(ngModel)]="TemasTrabajados[i]['Nombre']" [ngModelOptions]="{standalone: true}">
+                        <label for="form1" class="">Descripcion</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <button type="button" mdbBtn color="danger" mdbWavesEffect (click)="ActionTemas('delete', i)">
+                        <mdb-icon fas icon="trash-alt"></mdb-icon>
+                    </button>
+
+                </div>
+            </div>
+        </form>
+    </mdb-card-body>
+</mdb-card>
+
+<mdb-card class="mt-2">
+    <mdb-card-body>
+        <mdb-card-title>
+            <h4>Horarios</h4>
+            <button class="float-right" type="button" mdbBtn color="success" mdbWavesEffect (click)="ActionHorarios('add')">
+                <mdb-icon fas icon="plus"></mdb-icon>
+            </button>
+            <br>
+            <br>
+        </mdb-card-title>
+        <form>
+            <div class="form-row" *ngFor="let horario of horarios; let i = index">
+                <div class="col">
+                    <div class="md-form ">
+                        <input mdbInput type="text" class="form-control" id="form1" placeholder=""
+                            [(ngModel)]="horarios[i]['dia']" [ngModelOptions]="{standalone: true}">
+                        <label for="form1" class="">Dia</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="md-form ">
+                        <input mdbInput type="text" class="form-control" id="form1" placeholder=""
+                            [(ngModel)]="horarios[i]['hora']" [ngModelOptions]="{standalone: true}">
+                        <label for="form1" class="">Hora</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="md-form ">
+                        <input mdbInput type="text" class="form-control" id="form1" placeholder=""
+                            [(ngModel)]="horarios[i]['lugar']" [ngModelOptions]="{standalone: true}">
+                        <label for="form1" class="">Lugar</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <button type="button" mdbBtn color="danger" mdbWavesEffect (click)="ActionHorarios('delete', i)">
+                        <mdb-icon fas icon="trash-alt"></mdb-icon>
+                    </button>
+
+                </div>
+            </div>
+        </form>
+    </mdb-card-body>
+</mdb-card>
+
+
+<mdb-card class="mt-2">
+    <mdb-card-body>
+        <mdb-card-title>
+            <h4>Generar JSON</h4>
+        </mdb-card-title>
+        <button type="button" mdbBtn color="primary" mdbWavesEffect (click)="generar()">Generar</button>
+        <div class="col m-0 p-0">
+            <pre>
+                {{ infoGrupo | json }}
+            </pre>
+        </div>
+        
+    </mdb-card-body>
+</mdb-card>

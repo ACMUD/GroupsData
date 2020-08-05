@@ -21,6 +21,7 @@
     "@angular/router": "~10.0.3",
     "angular-bootstrap-md": "^8.3.0",
     "animate.css": "^3.7.2",
+    "@fortawesome/fontawesome-free": "^5.11.2",
     "mdbootstrap": "^4.19.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
