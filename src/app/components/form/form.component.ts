@@ -13,6 +13,7 @@ export class FormComponent implements OnInit {
   TemasTrabajados = [];
   horarios = [];
   infoGrupo: any = {};
+  predata: string;
 
   constructor() { }
 
@@ -28,6 +29,36 @@ export class FormComponent implements OnInit {
     this.infoGrupo.horarios = this.horarios;
   }
 
+  // tslint:disable-next-line: typedef
+  importar() {
+    const datos = JSON.parse(this.predata)
+    this.infobase = {
+      // tslint:disable-next-line: no-string-literal
+      Nombre: datos['Nombre'],
+      // tslint:disable-next-line: no-string-literal
+      Abreviacion: datos['Abreviacion'],
+      // tslint:disable-next-line: no-string-literal
+      logo: datos['logo'],
+      // tslint:disable-next-line: no-string-literal
+      link: datos['link'],
+      // tslint:disable-next-line: no-string-literal
+      Descripcion: datos['Descripcion'],
+    };
+      // tslint:disable-next-line: no-string-literal
+    this.responsables = datos['Responsables'].map(data => {
+      return {texto: data};
+    });
+      // tslint:disable-next-line: no-string-literal
+    this.TemasTrabajados = datos['TemasTrabajados'];
+      // tslint:disable-next-line: no-string-literal
+    this.horarios = datos['horarios'];
+      // tslint:disable-next-line: no-string-literal
+    this.prerequisitos = datos['Prerrequisitos'].map(data => {
+      return {texto: data};
+    });
+  }
+
+  // tslint:disable-next-line: typedef
   ActionResponsable(action: string, index?: number) {
     if (action === 'add') {
       this.responsables.push({
@@ -38,6 +69,7 @@ export class FormComponent implements OnInit {
     }
   }
 
+  // tslint:disable-next-line: typedef
   ActionPrerequisitos(action: string, index?: number) {
     if (action === 'add') {
       this.prerequisitos.push({
@@ -48,17 +80,19 @@ export class FormComponent implements OnInit {
     }
   }
 
+  // tslint:disable-next-line: typedef
   ActionTemas(action: string, index?: number) {
     if (action === 'add') {
       this.TemasTrabajados.push({
-        Nombre: '',
-        Descripcion: ''
+        nombre: '',
+        descripcion: ''
       });
     } else {
       this.TemasTrabajados.splice(index, 1);
     }
   }
 
+  // tslint:disable-next-line: typedef
   ActionHorarios(action: string, index?: number) {
     if (action === 'add') {
       this.horarios.push({

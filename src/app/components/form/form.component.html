@@ -1,11 +1,28 @@
 <mdb-card>
     <mdb-card-body>
         <mdb-card-title>
+            <h4></h4>
+        </mdb-card-title>
+        <button mdbBtn color="info" class="waves-light" type="button" (click)="test.toggle()" mdbWavesEffect>
+            Cargar JSON
+          </button>
+          
+          <div mdbCollapse [isCollapsed]="true" #test="bs-collapse">
+            <div class="md-form col">
+                <textarea type="text" id="form7" class="md-textarea form-control" mdbInput
+                    [(ngModel)]="predata" [ngModelOptions]="{standalone: true}"></textarea>
+                <label for="form7">JSON  de datos</label>
+            </div>
+            <button type="button" mdbBtn color="primary" mdbWavesEffect (click)="importar()">Importar datos</button>
+          </div>
+    </mdb-card-body>
+</mdb-card>
+
+<mdb-card>
+    <mdb-card-body>
+        <mdb-card-title>
             <h4>Info Base Grupo de interes</h4>
         </mdb-card-title>
-        <!-- <mdb-card-text>Some quick example text to build on the card title and make up the bulk of the card's
-        content.</mdb-card-text>
-       -->
         <form>
             <div class="form-row">
                 <div class="col">
@@ -125,7 +142,7 @@
                 <div class="col">
                     <div class="md-form ">
                         <input mdbInput type="text" class="form-control" id="form1" placeholder=""
-                            [(ngModel)]="TemasTrabajados[i]['Nombre']" [ngModelOptions]="{standalone: true}">
+                            [(ngModel)]="TemasTrabajados[i]['nombre']" [ngModelOptions]="{standalone: true}">
                         <label for="form1" class="">Nombre</label>
                     </div>
                 </div>
